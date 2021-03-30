@@ -1,0 +1,13 @@
+section.team
+  .container
+    +blockHeading('Who we are', 'Meet our team', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odit animi nulla dolor, vitae ex quisquam qui. Minus quod consequuntur voluptates natus molestiae quaerat consequatur veritatis, quo voluptatum est dolores!')
+    .team-list
+      +teamItem("./images/img-team1.png", "Nguyen Tran", "Nguyen Tran", "Frontend Developer")
+        +teamSocial("nguyentran")
+      +teamItem("./images/img-team2.png", "Christopher Cambell", "Christopher Cambell", "Branding/UX Designer")
+        +teamSocial()
+      +teamItem("./images/img-team3.png", "Michael Fertig", "Michael Fertig", "Graphic Designer")
+        +teamSocial()
+section.brands
+  .container
+    img.brands-image(src="./images/img-logos.png", alt="List of brand logos")

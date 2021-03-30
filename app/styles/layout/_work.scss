@@ -1,0 +1,134 @@
+.work {
+  padding-top: 10rem;
+
+  &-list {
+    @include flexBox();
+    height: 78rem;
+  }
+
+  &-column {
+    width: 25%;
+  }
+
+  &-content {
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  &-title {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.6;
+    @include textClamp(1);
+  }
+
+  &-desc {
+    color: $white-color;
+  }
+
+  &-image {
+    @include size(100%);
+    object-fit: cover;
+  }
+
+  &-item {
+    height: 50%;
+  }
+
+  &-item--full {
+    height: 100%;
+  }
+
+  @include maxWidth(1600px) {
+    &-list {
+      height: 60rem;
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-list {
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    &-column {
+      width: 50%;
+    }
+
+    &-item {
+      height: 42rem;
+    }
+
+    &-item--full {
+      height: 84rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-column {
+      width: 100%;
+    }
+
+    &-item,
+    &-item--full {
+      height: auto;
+    }
+  }
+}
+
+// Using CSS Grid
+.work-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 39rem);
+  grid-template-areas:
+    'image1 image2 image5 image6'
+    'image3 image4 image5 image7';
+
+  .work-item {
+    height: 100% !important;
+
+    &:nth-child(2) {
+      grid-area: image2;
+    }
+
+    &:nth-child(3) {
+      grid-area: image3;
+    }
+
+    &:nth-child(4) {
+      grid-area: image4;
+    }
+
+    &:nth-child(5) {
+      grid-area: image5;
+    }
+
+    &:last-child {
+      grid-area: image7;
+    }
+  }
+
+  @include maxWidth(1600px) {
+    grid-template-rows: repeat(2, 30rem);
+  }
+
+  @include maxWidth(1279px) {
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'image1 image2'
+      'image3 image4'
+      'image5 image6'
+      'image5 image7';
+  }
+
+  @include maxWidth(767px) {
+    display: block;
+  }
+}
+
+@include hoverEffect('.work-item', '.work-content', false);

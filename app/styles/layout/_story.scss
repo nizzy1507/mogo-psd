@@ -1,0 +1,152 @@
+.story {
+  padding: 10rem 0;
+
+  &-list {
+    @include flexBox(stretch, space-between);
+  }
+
+  &-item {
+    flex-basis: calc(33.33% - 2rem);
+  }
+
+  &-media {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  &-image {
+    @include size(100%, 24rem);
+    object-fit: cover;
+  }
+
+  &-date {
+    position: absolute;
+    padding: 1.5rem 2rem;
+    bottom: 1rem;
+    left: -1rem;
+    color: $white-color;
+    @include bgColor($tertiary-color);
+    @include flexBox(center, center, column);
+    z-index: 2;
+
+    &-number {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    &-month {
+      color: $white-color;
+      line-height: 1;
+    }
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+
+  &-desc {
+    // @include textClamp(3, auto);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 2rem;
+  }
+
+  &-meta {
+    @include flexBox(center);
+
+    &-item {
+      margin-right: 2rem;
+    }
+
+    &-icon {
+      margin-right: 0.5rem;
+      color: $tertiary-color;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+
+    &-image {
+      height: 14rem;
+    }
+
+    &-date {
+      top: 0;
+      right: 0;
+      left: unset;
+      bottom: unset;
+      padding: 1rem 1.5rem;
+
+      &-number {
+        font-size: 2rem;
+        margin-bottom: 2px;
+      }
+      &-month {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-title {
+      font-size: 1.5rem;
+    }
+
+    &-desc-inner {
+      font-size: 1.3rem;
+      @include textClamp(3);
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+    }
+
+    &-image {
+      height: auto;
+    }
+
+    &-item {
+      flex-basis: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}
+
+.map {
+  padding: 6rem 0;
+  background: linear-gradient(
+      to bottom,
+      rgba($white-color, 0.8),
+      rgba($white-color, 0.8)
+    ),
+    url('../images/img-map.png') no-repeat center / cover;
+
+  &-content {
+    @include flexBox(center, center, column);
+  }
+
+  &-heading {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $primary-color;
+    font-weight: bold;
+    position: relative;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+
+    &::after {
+      content: '';
+      @include absoluteCenter('left');
+      @include size(6rem, 0.3rem);
+      @include bgColor($primary-color);
+      bottom: 0;
+    }
+  }
+}

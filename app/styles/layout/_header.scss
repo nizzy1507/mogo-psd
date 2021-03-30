@@ -1,0 +1,254 @@
+.header {
+  min-height: 100rem;
+  background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    ),
+    url('../images/img-header-bg.jpg') no-repeat center / cover;
+  color: $white-color;
+
+  &-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white-color;
+  }
+
+  &-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  &-menu-link {
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.25s linear;
+  }
+
+  &-menu-icon {
+    color: $white-color;
+    transition: all 0.25s linear;
+  }
+
+  &-menu-icon:hover {
+    color: $secondary-color;
+  }
+
+  &-top {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &-menu {
+    display: flex;
+  }
+
+  &-content {
+    padding-top: 17rem;
+    text-align: center;
+    max-width: 85rem;
+    margin: 0 auto;
+  }
+
+  &-content-caption {
+    font-size: 7.2rem;
+    font-family: $tertiary-font;
+    margin-bottom: 3rem;
+  }
+
+  &-content-main {
+    font-size: 15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      @include absoluteCenter('left');
+      bottom: 0;
+      @include size(6rem, 0.3rem);
+      background-color: $white-color;
+    }
+  }
+
+  &-content-more {
+    display: inline-block;
+    font-weight: bold;
+    color: $white-color;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    border: 3px solid $white-color;
+  }
+
+  &-bottom {
+    margin-top: 15.5rem;
+    padding-bottom: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -3rem;
+
+    &-item {
+      width: calc(25% - 3rem);
+      padding-top: 2.5rem;
+      border-top: 3px solid white;
+      margin-left: 3rem;
+      opacity: 0.5;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.25s linear;
+    }
+
+    &-item::before {
+      content: '';
+      position: absolute;
+      @include size(7rem, 0.3rem);
+      top: 0;
+      left: 0;
+      background-color: $primary-color;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all 0.25s linear;
+    }
+
+    &-item:hover,
+    &-item.is-active {
+      opacity: 1;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &-number {
+      font-weight: bold;
+      font-size: 2.4rem;
+    }
+
+    &-text {
+      margin-left: 1rem;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    min-height: unset;
+
+    .header-content {
+      padding-top: 10rem;
+    }
+
+    .header-content-main {
+      font-size: 10rem;
+    }
+
+    .header-bottom {
+      margin-top: 10.5rem;
+    }
+  }
+
+  @include minWidth(768px) {
+    &-menu-item:not(:first-child) {
+      margin-left: 5rem;
+    }
+
+    &-menu-link {
+      color: $white-color;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid transparent;
+    }
+
+    &-menu-link:hover {
+      color: $secondary-color;
+      border-bottom-color: $secondary-color;
+    }
+  }
+
+  @include maxWidth(767px) {
+    .header-bottom-text {
+      display: none;
+    }
+
+    .header-content-caption {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-content-main {
+      font-size: 5rem;
+      padding-bottom: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .header-bottom-item {
+      text-align: center;
+      padding-top: 1.5rem;
+    }
+
+    .header-bottom-item::before {
+      width: 50%;
+    }
+
+    .header-content {
+      padding-top: 5rem;
+    }
+
+    .header-bottom {
+      margin-top: 5rem;
+    }
+
+    .header-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white-color;
+      width: 30rem;
+      display: block;
+      padding: 2rem 2.5rem;
+      z-index: 10;
+      transform: translateX(100%);
+      transition: transform 0.25s ease-in-out;
+    }
+
+    .header-menu.is-expand {
+      transform: translateX(0);
+    }
+
+    .header-menu-item {
+      margin-bottom: 1rem;
+    }
+
+    .header-menu-icon {
+      display: block;
+      color: $title-color;
+      padding: 1.5rem;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .header-menu-link {
+      color: $title-color;
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $secondary-color;
+        color: white;
+      }
+    }
+
+    .header-toggle {
+      display: inline-block;
+      align-self: center;
+    }
+  }
+}

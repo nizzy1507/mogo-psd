@@ -1,0 +1,195 @@
+.footer {
+  &-top {
+    padding: 7.5rem 0 7rem;
+
+    @include flexBox(stretch, space-between);
+  }
+
+  &-column {
+    flex-basis: calc(25% - 2.5rem);
+
+    &:first-child {
+      flex-basis: calc(40% - 2.5rem);
+    }
+    &:nth-child(2) {
+      flex-basis: calc(35% - 2.5rem);
+    }
+  }
+
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 500;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+
+    &--logo {
+      text-transform: none;
+      font-size: 4.6rem;
+      font-weight: 600;
+      color: $gray-dark-color;
+    }
+  }
+
+  &-desc {
+    margin-top: 2rem;
+    margin-bottom: 4.5rem;
+  }
+
+  &-followers {
+    strong {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    font-weight: 500;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 2rem;
+  }
+
+  &-social {
+    @include flexBox(center);
+    margin-bottom: 4rem;
+
+    span {
+      margin-right: 2rem;
+    }
+  }
+
+  &-social-link {
+    font-size: 1.4rem;
+    color: $tertiary-color;
+    margin-right: 1.5rem;
+    transition: color 0.25s linear;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &-form {
+    width: 100%;
+    max-width: 38rem;
+    @include flexBox();
+  }
+
+  &-form-input {
+    @include bgColor($white-color);
+    padding: 1.5rem;
+    border: 1px solid $border-color;
+    border-right: 0;
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    flex: 1;
+    border-radius: 0;
+
+    &::placeholder {
+      font-style: italic;
+      color: #d6d6d6;
+    }
+  }
+
+  &-form-button {
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem 3.5rem;
+    font-weight: bold;
+    border: none;
+    @include bgColor($tertiary-color);
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    border-radius: 0;
+    line-height: normal;
+  }
+
+  &-blog {
+    @include flexBox(center);
+    margin-bottom: 3rem;
+  }
+
+  &-blog-image {
+    @include size(12rem, 8rem);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &-blog-info {
+    padding-left: 2rem;
+  }
+
+  &-blog-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: $title-color;
+    @include textClamp(2);
+  }
+
+  &-blog-date {
+    font-size: 1.3rem;
+  }
+
+  &-gallery {
+    @include flexBox(stretch, flex-start, row, flex, wrap);
+    margin-left: -2px;
+    margin-bottom: 2rem;
+  }
+
+  &-image {
+    flex-basis: calc(33.33% - 2px);
+    margin-left: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 33.33%;
+    height: 0;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include size(100%);
+      object-fit: cover;
+    }
+  }
+
+  &-bottom {
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: 1px solid $border-color;
+    line-height: 1.4;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  &-gallery-more {
+    color: $title-color;
+  }
+
+  @include maxWidth(1023px) {
+    &-top {
+      display: block;
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+    }
+
+    &-column:not(:nth-child(99)) {
+      flex-basis: 100%;
+      margin-bottom: 3rem;
+    }
+
+    &-column:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include maxWidth(479px) {
+    &-form-button {
+      padding: 1.5rem;
+    }
+  }
+}

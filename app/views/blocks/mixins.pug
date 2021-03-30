@@ -1,0 +1,114 @@
+mixin menuLink(title, href = "#")
+	li.header-menu-item
+		a.header-menu-link(href= href)= title
+
+mixin headerBottomItem(number, intro)
+	.header-bottom-item
+		span.header-bottom-number= number
+		span.header-bottom-text= intro
+
+mixin blockHeading(caption, title, desc)
+	.block-heading
+		h3.block-heading-caption= caption
+		h2.block-heading-title= title
+		if desc
+			p.block-heading-desc= desc
+
+mixin aboutItem({src, alt, iconClass, title = 'Super Team'})
+	.about-item
+		img.about-image(src= src alt= alt)
+		.about-content
+			i.about-icon(class= iconClass)
+			span.about-title= title
+
+mixin numberItem(count, text)
+	.number-item
+		h4.number-item-count= count
+		span.number-item-text= text
+
+mixin servicesItem(src, alt, title, desc)
+	.services-item
+		img.services-item-image(src= src, alt= alt)
+		.services-item-info
+			h4.services-item-title= title
+			p.services-item-desc= desc
+
+mixin wedoItem(src, title, content, active = '')
+	.wedo-item(class= active)
+		.wedo-item-header
+			img(src= src).wedo-item-icon
+			h3.wedo-item-title= title
+			i.fal.fa-angle-down.wedo-item-arrow
+		.wedo-item-content
+			.wedo-item-text= content
+
+mixin teamSocial(facebook = '#', twitter = '#', pinterest = '#', instagram = '#')
+	ul.team-social
+		li.team-social-item
+			a.team-social-link(href= facebook)
+				i.fab.fa-facebook-f
+		li.team-social-item
+			a.team-social-link(href= twitter)
+				i.fab.fa-twitter
+		li.team-social-item
+			a.team-social-link(href= pinterest)
+				i.fab.fa-pinterest-p
+		li.team-social-item
+			a.team-social-link(href= instagram)
+				i.fab.fa-instagram
+
+mixin teamItem(src = './images/img-team2.png', alt = 'John', name = 'Nguyen Tran', position = 'Frontend Developer')
+	.team-item
+		.team-main
+			img.team-image(src= src, alt= alt)
+			.team-content
+				if block
+					block
+		.team-info
+			h3.team-name= name
+			span.team-position= position
+
+mixin workItem(src, icon, title, desc, full = '')
+	.work-item(class= full)
+		img.work-image(src= src)
+		.work-content
+			img.work-icon(src= icon)
+			h3.work-title= title
+			span.work-desc.text.text--light.text--italic= desc
+
+mixin peopleItem(src, name, job, desc)
+	li.people-item
+		img.people-avatar(src= src)
+		.people-info
+			h3.people-name= name
+			span.people-job.text.text--italic.text--light= job
+			p.people-desc.text= desc
+
+mixin storyItem(src, dateNumber = '15', dateMonth = 'Jan', title = 'Lorem ipsum dolor sit amet', desc = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dignissimos et delectus doloremque. Nobis dolores culpa, unde dicta, error vitae dignissimos labore quo, magni veritatis hic quis a fugiat deserunt.', views = '542', comments = '17')
+	li.story-item
+		.story-media
+			img.story-image(src= src)
+			.story-date
+				span.story-date-number= dateNumber
+				span.story-date-month.text.text--light.text--italic= dateMonth
+		h3.story-title= title
+		.story-desc.text
+			p.story-desc-inner= desc
+		.story-meta
+			.story-meta-item
+				i.fa.fa-eye.story-meta-icon
+				span.story-meta-number.text.text--light.text--italic= views
+			.story-meta-item
+				i.fa.fa-comment.story-meta-icon
+				span.story-meta-number.text.text--light.text--italic= comments
+
+mixin quoteItem(src = './images/img-quote.png', type = false, desc = '"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem accusantium deserunt nulla, quas quos asperiores tempore! Suscipit rem, laboriosam tempora reiciendis obcaecati adipisci unde aspernatur quod, quibusdam nobis ad repudiandae?"', author = 'John Doe')
+	.quote-item
+		if !type
+			.quote-icon
+				img(src= src)
+		else
+			img(src= src).quote-image
+		.quote-info
+			p.quote-desc= desc
+			span.quote-author= author

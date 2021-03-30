@@ -1,0 +1,19 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.text {
+  font-family: $secondary-font;
+  font-size: 1.5rem;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+.text--light {
+  font-weight: 300;
+}
+
+.text--italic {
+  font-style: italic;
+}

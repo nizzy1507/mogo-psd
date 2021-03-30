@@ -1,0 +1,78 @@
+.people {
+  padding: 10rem 0 3rem;
+  background: linear-gradient(
+      to bottom,
+      rgba($white-color, 0.8),
+      rgba($white-color, 0.8)
+    ),
+    url('../images/img-people-bg.png') no-repeat center / cover;
+
+  &-list {
+    margin-top: 8.5rem;
+    @include flexBox(stretch, space-between, row, flex, wrap);
+    padding: 0 4rem;
+  }
+
+  &-item {
+    flex-basis: calc(50% - 4rem);
+    margin-bottom: 7rem;
+
+    @include flexBox(flex-start);
+  }
+
+  &-avatar {
+    @include size(11rem);
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    transform: translateY(-1.3rem);
+  }
+
+  &-info {
+    padding-left: 3rem;
+  }
+
+  &-name {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  &-job {
+    color: $title-color;
+    display: inline-block;
+    padding-bottom: 2rem;
+    margin-bottom: 2.2rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include size(6rem, 0.3rem);
+      @include bgColor($primary-color);
+    }
+  }
+
+  @include maxWidth(1023px) {
+    padding: 5rem 0 1rem;
+
+    &-item {
+      flex-basis: 100%;
+      margin-bottom: 4rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      padding: 0;
+      margin-top: 6rem;
+    }
+
+    &-avatar {
+      @include size(8rem);
+      transform: translateY(0);
+    }
+  }
+}

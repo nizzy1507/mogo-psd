@@ -1,0 +1,28 @@
+//- header -> header-top -> header-content -> header-bottom -> responsive -> menu JavaScript -> Slick slider
+
+header.header
+  .container
+    nav.header-top
+      a.header-logo(href="index.html") MoGo
+      i.far.fa-bars.header-toggle
+      ul.header-menu
+        +menuLink('About', '#about')(class='is-active')
+        +menuLink('Service', '#service')
+        +menuLink('Work', '#work')
+        +menuLink('Blog', '#blog')
+        +menuLink('Contact', '#contact')
+        li.header-menu-item
+          a.header-menu-icon(href="#")
+            i.far.fa-shopping-cart
+        li.header-menu-item
+          a.header-menu-icon(href="#")
+            i.far.fa-search
+    .header-content
+      h2.header-content-caption Creative Template
+      h1.header-content-main Welcome to Mogo
+      a.header-content-more(href="#") Learn more
+    .header-bottom
+      +headerBottomItem('01', 'Intro')(class="is-active")
+      +headerBottomItem('02', 'Work')
+      +headerBottomItem('03', 'About')
+      +headerBottomItem('04', 'Contacts')

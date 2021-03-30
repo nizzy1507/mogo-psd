@@ -1,0 +1,131 @@
+.quote {
+  padding: 6.5rem 0;
+  @include bgColor($gray-color);
+
+  &-arrow {
+    font-size: 3rem;
+    color: $gray-dark-color;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    transition: color 0.25s linear;
+
+    &:hover {
+      color: $title-color;
+    }
+  }
+
+  &-item {
+    @include flexBox(center);
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+    outline: none;
+  }
+
+  &-icon {
+    @include size(15rem);
+    @include flexBox(center, center);
+    border: 3px solid $tertiary-color;
+    flex-shrink: 0;
+    margin-right: 6rem;
+  }
+
+  &-image {
+    @include size(22rem);
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+  }
+
+  &-info {
+    font-size: 2.4rem;
+  }
+
+  &-desc {
+    font-weight: 300;
+    line-height: 1.6;
+    font-style: italic;
+    font-family: $secondary-font;
+    color: $text-color;
+    margin-bottom: 2.5rem;
+    @include textClamp(3);
+  }
+
+  &-author {
+    display: inline-block;
+    position: relative;
+    font-family: $tertiary-font;
+    padding-left: 7rem;
+
+    &::before {
+      content: '';
+      @include absoluteCenter('top');
+      left: 0;
+      @include size(6rem, 0.3rem);
+      background-color: $primary-color;
+    }
+  }
+
+  // Slick slider
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+
+  .slick-arrow {
+    background: transparent;
+    border: 0;
+    outline: none;
+    font-size: 3rem;
+    color: $gray-dark-color;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    transition: color 0.25s linear;
+    @include absoluteCenter('top');
+    z-index: 10;
+
+    &:hover {
+      color: $title-color;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  @include maxWidth(767px) {
+    &-arrow {
+      display: none;
+    }
+
+    &-item {
+      padding: 0;
+      flex-direction: column;
+    }
+
+    &-icon {
+      @include size(10rem);
+      margin-right: 0;
+
+      img {
+        max-width: 50%;
+      }
+    }
+
+    &-info {
+      margin-top: 3rem;
+    }
+
+    &-desc {
+      display: block;
+      font-size: 1.8rem;
+    }
+
+    &-author {
+      font-size: 2rem;
+    }
+  }
+}
