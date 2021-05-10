@@ -1,7 +1,7 @@
 {
-  "name": "frontend-workflow",
+  "name": "mogo",
   "version": "1.0.0",
-  "description": "A basic front-end workflow using Gulp",
+  "description": "Mogo Landing Page (PSD TO HTML)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,13 +9,16 @@
     "watch": "gulp watch",
     "start": "gulp build watch"
   },
-  "author": "evondev",
-  "license": "ISC",
-  "babel": {
-    "presets": [
-      "env"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyentran0715/mogo-psd.git"
   },
+  "author": "Nguyen Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyentran0715/mogo-psd/issues"
+  },
+  "homepage": "https://github.com/nguyentran0715/mogo-psd#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

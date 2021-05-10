@@ -72,6 +72,10 @@
     width: 100%;
     max-width: 38rem;
     @include flexBox();
+
+    @include maxWidth(500px) {
+      flex-direction: column;
+    }
   }
 
   &-form-input {
@@ -87,6 +91,10 @@
     &::placeholder {
       font-style: italic;
       color: #d6d6d6;
+    }
+
+    @include maxWidth(500px) {
+      border-right: 1px solid $border-color;
     }
   }
 
